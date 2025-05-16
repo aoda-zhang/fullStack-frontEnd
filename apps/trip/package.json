@@ -58,7 +58,7 @@
     "@types/ramda": "^0.27.44",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.21",
-    "vite": "^5.4.16"
+    "vite": "^5.4.19"
   },
   "packageManager": "pnpm@10.5.2",
   "pnpm": {
