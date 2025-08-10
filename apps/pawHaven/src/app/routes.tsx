@@ -15,11 +15,11 @@ const RootLayoutWithProps = () => {
   return <RootLayout menuItems={menuItems} />;
 };
 const Home = lazy(() => import('@/features/Home'));
-const TripLayout = lazy(() => import('@/features/Trip/tripLayout'));
-const TripBasic = lazy(() => import('@/features/Trip/Basic'));
-const TripDetail = lazy(() => import('@/features/Trip/Detail'));
-const TripSummary = lazy(() => import('@/features/Trip/Summary'));
-const TripSuccess = lazy(() => import('@/features/Trip/Success'));
+const TripLayout = lazy(() => import('@/features/Record/tripLayout'));
+const TripBasic = lazy(() => import('@/features/Record/Basic'));
+const TripDetail = lazy(() => import('@/features/Record/Detail'));
+const TripSummary = lazy(() => import('@/features/Record/Summary'));
+const TripSuccess = lazy(() => import('@/features/Record/Success'));
 const History = lazy(() => import('@/features/History'));
 const Login = lazy(() => import('@/features/Auth/Login'));
 const Register = lazy(() => import('@/features/Auth/Register'));

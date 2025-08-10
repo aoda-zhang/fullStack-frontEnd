@@ -1,33 +1,19 @@
 @reference "../../../../../../packages/assets/theme/global.css";
 .loginBox {
-  @apply flex justify-between flex-col lg:flex-row;
+  @apply flex min-h-full justify-between flex-col lg:flex-row;
+  .welcomeBanner {
+    @apply flex flex-1;
+    .loginBG {
+      @apply w-full lg:h-[100vh] lg:w-[60vw] relative object-cover;
+    }
+  }
   .loginForm {
-    @apply flex flex-1 justify-center flex-col lg:flex-col gap-[3.125rem] box-border p-[6%];
-    .welcome {
-      @apply flex items-center justify-center gap-6;
-      .text {
-        @apply text-4xl;
-      }
+    @apply flex justify-center lg:max-w-[40vw] flex-col box-border p-[6%];
+    .welcomeText {
+      @apply text-4xl mb-4 text-center;
     }
-    .icon {
-      width: 14.69rem;
-      margin-bottom: 3rem;
-    }
-    .pwd {
-      width: 1.08rem;
-    }
-    .form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.77rem;
-      min-width: 60%;
-      @include medias(($s, $m)) {
-        width: 100%;
-      }
-    }
-    .submitBtn {
-      width: 100%;
-      height: 3.08rem;
+    .baseForm {
+      @apply w-full lg:w-[30vw] lg:mb-5;
     }
     .help {
       width: 100%;
@@ -35,11 +21,6 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-    }
-  }
-  .welcomeBanner {
-    .loginBG {
-      @apply min-w-[50vw] min-h-[50vh] h-full w-auto lg:w-full lg:h-auto;
     }
   }
 }

@@ -41,9 +41,7 @@ const Login: FC = () => {
       </div>
 
       <div className={style.loginForm}>
-        <div className={style.welcome}>
-          <span className={style.text}>{t('login.welcome')}</span>
-        </div>
+        <div className={style.welcomeText}>{t('login.welcome')}</div>
         <FormProvider {...formProps}>
           <form>
             <FormInput
@@ -56,6 +54,7 @@ const Login: FC = () => {
             <FormInput
               type="password"
               variant="outlined"
+              className={style.baseForm}
               size="small"
               label={t('login.password')}
               name="password"
@@ -63,7 +62,7 @@ const Login: FC = () => {
             <Button
               disabled={isLoading}
               type="submit"
-              className={style.submitBtn}
+              className={style.baseForm}
               variant="contained"
               onClick={formProps.handleSubmit((data) => {
                 mutate({

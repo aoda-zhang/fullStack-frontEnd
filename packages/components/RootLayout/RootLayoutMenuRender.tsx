@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import { AlignJustify } from 'lucide-react';
 import { cloneElement } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -7,7 +6,6 @@ import { Link } from 'react-router-dom';
 import LangSwitcher from '../LangSwitcher';
 
 import styles from './index.module.css';
-import { useRootLayoutHeaderContext } from './RootLayoutHeader';
 
 const HeaderActionKeys = {
   openSidebarMenu: 'openSidebarMenu',
@@ -32,10 +30,8 @@ export interface MenuRenderType {
 const RootLayoutMenuRender = (props: MenuRenderType) => {
   const HeaderComponentMappings = {
     LangSwitcher: <LangSwitcher />,
-    AlignJustify: <AlignJustify />,
   };
   const { menuItems } = props;
-  const rootHeaderContext = useRootLayoutHeaderContext();
   const { t } = useTranslation();
 
   const toggleDark = (theme: string) => {
@@ -44,9 +40,6 @@ const RootLayoutMenuRender = (props: MenuRenderType) => {
 
   const handleHeaderAction = (action: string, actionProps: any) => {
     switch (action) {
-      case HeaderActionKeys.openSidebarMenu:
-        rootHeaderContext?.onOpenSidebar?.();
-        break;
       case HeaderActionKeys.toggleDark:
         toggleDark(actionProps);
         break;

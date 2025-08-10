@@ -1,32 +1,23 @@
 import { Drawer } from '@mui/material';
-import { useMemo } from 'react';
 
 import styles from './index.module.css';
-import { useRootLayoutHeaderContext } from './RootLayoutHeader';
 import RootLayoutMenuRender, { MenuItemType } from './RootLayoutMenuRender';
 
 interface RootLayoutSidebarProps {
   menuItems: MenuItemType[];
+  isSidebarOpen: boolean;
+  onCloseSidebar: () => void;
 }
 
-const RootLayoutSidebar = ({ menuItems }: RootLayoutSidebarProps) => {
-  const rootHeaderContext = useRootLayoutHeaderContext();
-  const getMenuOptions = useMemo(() => {
-    return (
-      menuItems?.filter(
-        (item) => !(item?.isAvailableOnMobile || item?.isOnlyMobile),
-      ) ?? []
-    );
-  }, [menuItems]);
-
+const RootLayoutSidebar = ({
+  menuItems,
+  isSidebarOpen,
+  onCloseSidebar,
+}: RootLayoutSidebarProps) => {
   return (
-    <Drawer
-      open={rootHeaderContext?.isSidebarAvailable}
-      anchor="right"
-      onClose={rootHeaderContext?.onCloseSidebar}
-    >
+    <Drawer open={isSidebarOpen} anchor="right" onClose={onCloseSidebar}>
       <div className={styles.rootSidebarPaper}>
-        <RootLayoutMenuRender menuItems={getMenuOptions} />
+        <RootLayoutMenuRender menuItems={menuItems} />
       </div>
     </Drawer>
   );

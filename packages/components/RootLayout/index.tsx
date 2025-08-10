@@ -3,7 +3,7 @@ import { Outlet, useMatches } from 'react-router-dom';
 
 import styles from './index.module.css';
 import RootLayoutFooter from './RootLayoutFooter';
-import RootLayoutHeader from './RootLayoutHeader';
+import RootLayoutHeader from './RootLayoutMenu';
 import { MenuItemType } from './RootLayoutMenuRender';
 import RootLayoutSidebar from './RootLayoutSidebar';
 
@@ -12,10 +12,12 @@ export const RootLayoutHandles = {
   requireUserLogin: 'requireUserLogin',
 };
 
+export interface GlobalStateType {
+  menuItems: any[];
+  locale: string;
+}
+
 export interface LayoutProps {
-  // userInfo: {
-  //   [key: string]: any;
-  // };
   menuItems: MenuItemType[];
 }
 
@@ -25,7 +27,7 @@ const RootLayout = ({ menuItems = [] }: LayoutProps) => {
     handle?: Record<string, any>;
   };
   const isMenuAvailable =
-    currentRouter?.handle?.[RootLayoutHandles.isMenuAvailable] ?? true;
+    !currentRouter?.handle?.[RootLayoutHandles.isMenuAvailable];
 
   return (
     <div className={styles.layout}>
