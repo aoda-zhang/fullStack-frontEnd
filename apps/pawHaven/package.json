@@ -62,11 +62,5 @@
     "autoprefixer": "^10.4.21",
     "tailwindcss": "^4.1.8"
   },
-  "packageManager": "pnpm@10.5.2",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "esbuild"
-    ]
-  }
+  "packageManager": "pnpm@10.5.2"
 }
