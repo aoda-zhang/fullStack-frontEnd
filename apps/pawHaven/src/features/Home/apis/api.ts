@@ -36,21 +36,5 @@ export const getDefaultDynamicMenu = () => {
       component: 'LangSwitcher',
       type: 'component',
     },
-    {
-      label: 'common.mobileMenu',
-      isOnlyMobile: true,
-      component: 'AlignJustify',
-      action: 'openSidebarMenu',
-      props: {
-        size: 30,
-      },
-      type: 'component',
-    },
-    {
-      label: 'common.darkMode',
-      component: 'DarkModeToggle',
-      classNames: ['item'],
-      type: 'component',
-    },
   ];
 };

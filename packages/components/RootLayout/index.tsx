@@ -3,9 +3,8 @@ import { Outlet, useMatches } from 'react-router-dom';
 
 import styles from './index.module.css';
 import RootLayoutFooter from './RootLayoutFooter';
-import RootLayoutHeader from './RootLayoutMenu';
+import RootLayoutMenu from './RootLayoutMenu';
 import { MenuItemType } from './RootLayoutMenuRender';
-import RootLayoutSidebar from './RootLayoutSidebar';
 
 export const RootLayoutHandles = {
   isMenuAvailable: 'isMenuAvailable',
@@ -31,9 +30,7 @@ const RootLayout = ({ menuItems = [] }: LayoutProps) => {
 
   return (
     <div className={styles.layout}>
-      <RootLayoutHeader isMenuAvailable={isMenuAvailable} menuItems={menuItems}>
-        <RootLayoutSidebar menuItems={menuItems} />
-      </RootLayoutHeader>
+      <RootLayoutMenu isMenuAvailable={isMenuAvailable} menuItems={menuItems} />
       <div className={styles.main}>
         <div className={styles.content}>
           <Outlet />

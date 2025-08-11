@@ -2,8 +2,8 @@ import { AlignJustify } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import brand from '../../assets/images/brand.png';
 import useIsMobile from '../../hooks/useIsMobile';
+import Brand from '../Brand';
 
 import styles from './index.module.css';
 import RootLayoutMenuRender, { MenuItemType } from './RootLayoutMenuRender';
@@ -36,7 +36,7 @@ const RootLayoutMenu = ({
           navigate('/');
         }}
       >
-        <img src={brand} alt="brand" className={styles.brand} />
+        <Brand />
       </button>
       {!isMobile && <RootLayoutMenuRender menuItems={menuItems} />}
 

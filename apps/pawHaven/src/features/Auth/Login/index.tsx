@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
-import LoginImg from '@shared/assets/images/login.png';
+import hero from '@shared/assets/images/hero.png';
+import Brand from '@shared/components/Brand';
 import FormInput from '@shared/components/Form/FormInput';
-import ImageWithSkeleton from '@shared/components/ImageWithSkeleton';
 import storageKeys from '@shared/constants/storageKeys';
 import storage from '@shared/utils/storage';
 import { type FC, memo } from 'react';
@@ -32,49 +32,48 @@ const Login: FC = () => {
   });
   return (
     <div className={style.loginBox}>
-      <div className={style.welcomeBanner}>
-        <ImageWithSkeleton
-          imgSrc={LoginImg}
-          title={t('login.welcome')}
-          className={style.loginBG}
-        />
-      </div>
+      <Brand />
+      <div className={style.contentBox}>
+        <div className={style.slogan}>
+          <img src={hero} alt={t('common.slogan')} className={style.loginBG} />
+        </div>
 
-      <div className={style.loginForm}>
-        <div className={style.welcomeText}>{t('login.welcome')}</div>
-        <FormProvider {...formProps}>
-          <form>
-            <FormInput
-              variant="outlined"
-              size="small"
-              className={style.baseForm}
-              label={t('login.userName')}
-              name="userName"
-            />
-            <FormInput
-              type="password"
-              variant="outlined"
-              className={style.baseForm}
-              size="small"
-              label={t('login.password')}
-              name="password"
-            />
-            <Button
-              disabled={isLoading}
-              type="submit"
-              className={style.baseForm}
-              variant="contained"
-              onClick={formProps.handleSubmit((data) => {
-                mutate({
-                  userName: data.userName,
-                  password: data.password,
-                });
-              })}
-            >
-              {t('login.primary_login')}
-            </Button>
-          </form>
-        </FormProvider>
+        <div className={style.loginForm}>
+          <div className={style.welcomeText}>{t('login.primary_login')}</div>
+          <FormProvider {...formProps}>
+            <form>
+              <FormInput
+                variant="outlined"
+                size="small"
+                className={style.baseForm}
+                label={t('login.userName')}
+                name="userName"
+              />
+              <FormInput
+                type="password"
+                variant="outlined"
+                className={style.baseForm}
+                size="small"
+                label={t('login.password')}
+                name="password"
+              />
+              <Button
+                disabled={isLoading}
+                type="submit"
+                className={style.baseForm}
+                variant="contained"
+                onClick={formProps.handleSubmit((data) => {
+                  mutate({
+                    userName: data.userName,
+                    password: data.password,
+                  });
+                })}
+              >
+                {t('login.primary_login')}
+              </Button>
+            </form>
+          </FormProvider>
+        </div>
       </div>
     </div>
   );

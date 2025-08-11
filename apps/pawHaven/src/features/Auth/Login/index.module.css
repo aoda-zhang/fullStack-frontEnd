@@ -1,26 +1,30 @@
 @reference "../../../../../../packages/assets/theme/global.css";
+
 .loginBox {
-  @apply flex min-h-full justify-between flex-col lg:flex-row;
-  .welcomeBanner {
-    @apply flex flex-1;
-    .loginBG {
-      @apply w-full lg:h-[100vh] lg:w-[60vw] relative object-cover;
+  @apply flex flex-col w-dvw h-dvh box-border p-10 bg-amber-100;
+  .contentBox {
+    @apply flex flex-row max-w-[50vw] m-auto bg-white;
+    border-radius: 6%;
+    .slogan {
+      @apply flex flex-col gap-10 justify-center items-center bg-amber-200;
+      border-radius: 6%;
+      .loginBG {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 8%;
+      }
+      .sloganText {
+        @apply text-xl font-family-friendly;
+      }
     }
-  }
-  .loginForm {
-    @apply flex justify-center lg:max-w-[40vw] flex-col box-border p-[6%];
-    .welcomeText {
-      @apply text-4xl mb-4 text-center;
-    }
-    .baseForm {
-      @apply w-full lg:w-[30vw] lg:mb-5;
-    }
-    .help {
-      width: 100%;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+    .loginForm {
+      @apply flex flex-1 flex-col justify-center box-border p-16;
+      .welcomeText {
+        @apply text-2xl mb-5 text-center;
+      }
+      .baseForm {
+        @apply w-full lg:min-w-[20vw] lg:mb-2;
+      }
     }
   }
 }

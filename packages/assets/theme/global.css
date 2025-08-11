@@ -49,7 +49,9 @@
 
   /* === Font Families === */
   --font-family-sans: 'Inter', 'Nunito', sans-serif;
-  --font-family-serif: 'Merriweather', serif;
+  --font-family-friendly:
+    'Poppins', 'Nunito', 'Helvetica', 'Arial',
+    sans-serif --font-family-serif: 'Merriweather', serif;
   --font-family-handwriting: 'Patrick Hand', cursive;
 }
 
