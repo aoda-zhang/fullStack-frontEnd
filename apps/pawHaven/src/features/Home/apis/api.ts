@@ -26,7 +26,7 @@ export const getDefaultDynamicMenu = () => {
       type: 'link',
     },
     {
-      label: 'common.signin',
+      label: 'auth.auth',
       to: '/login',
       classNames: ['item', 'login'],
       type: 'link',

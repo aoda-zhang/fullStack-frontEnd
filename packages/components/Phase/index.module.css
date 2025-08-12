@@ -1,4 +1,4 @@
-@reference '../../assets/theme/global.css';
+@reference '../../theme/global.css';
 .phase {
   @apply border-b-1 border-border pb-5 mb-3;
   .title {

@@ -1,4 +1,4 @@
-@reference "../../assets/theme/global.css";
+@reference "../../theme/global.css";
 .label {
   @apply text-[1rem] mb-[.625rem] font-normal;
 }

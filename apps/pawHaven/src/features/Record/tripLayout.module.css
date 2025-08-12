@@ -1,4 +1,4 @@
-@reference "../../../../../packages/assets/theme/global.css";
+@reference "../../../../../packages/theme/global.css";
 
 .trip {
   @apply flex flex-col gap-10 mt-8 px-2  lg:px-[20%];

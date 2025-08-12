@@ -9,6 +9,7 @@ export const routeKeys = {
   login: '/login',
   register: '/register',
   notFund: '/notFound',
+  auth: '/auth',
 };
 
 export default routeKeys;

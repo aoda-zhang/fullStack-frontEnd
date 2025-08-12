@@ -3,17 +3,16 @@
 @theme {
   /* === Core Colors (Warm & Friendly) === */
   --color-primary: #f4a261; /* warm orange */
-  --color-primary-light: #f6bd85;
-  --color-primary-dark: #e0762f;
+  --color-primary-light: #ebe6e7;
 
-  --color-secondary: #4caf50; /* nature green */
-  --color-background: #faf6f1; /* warm off-white */
+  --color-secondary: #4caf50;
+  --color-background: #faf6f1;
   --color-surface: #ffffff;
 
   --color-text: #2f2f2f;
   --color-text-secondary: #6b6b6b;
   --color-border: #dcd7d3;
-  --color-accent: #3b82f6; /* sky blue */
+  --color-accent: #3b82f6;
 
   /* === Neutral Colors === */
   --color-neutral: #a8a29e;
@@ -53,29 +52,6 @@
     'Poppins', 'Nunito', 'Helvetica', 'Arial',
     sans-serif --font-family-serif: 'Merriweather', serif;
   --font-family-handwriting: 'Patrick Hand', cursive;
-}
-
-/* === Dark Mode Override (Still Warm) === */
-.dark {
-  --color-primary: #f4a261;
-  --color-primary-light: #f6bd85;
-  --color-primary-dark: #e0762f;
-
-  --color-secondary: #81c784;
-  --color-background: #1f1f1f;
-  --color-surface: #2b2b2b;
-
-  --color-text: #f9f9f9;
-  --color-text-secondary: #bdbdbd;
-  --color-border: #444;
-  --color-accent: #60a5fa;
-
-  --color-neutral: #a1a1aa;
-  --color-muted: #4b4b4b;
-
-  --color-error: #f87171;
-  --color-success: #81c784;
-  --color-warning: #facc15;
 }
 
 @layer base {

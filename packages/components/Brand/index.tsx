@@ -17,7 +17,7 @@ const Brand = () => {
       }}
     >
       <img src={logoImg} alt={t('common.slogan')} className={styles.logo} />
-      <span className={styles.slogan}>{t('common.slogan')}</span>
+      <span className={styles.name}>{t('common.name')}</span>
     </button>
   );
 };

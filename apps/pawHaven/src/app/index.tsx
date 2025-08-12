@@ -1,5 +1,3 @@
-import '@shared/assets/theme/global.css';
-
 import { FC } from 'react';
 
 import AppProvider from './appProvider';

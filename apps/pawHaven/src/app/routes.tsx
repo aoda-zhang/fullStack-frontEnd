@@ -8,6 +8,7 @@ import {
 
 import GuardRoute from '@/components/GuardRoute';
 import routeKeys from '@/constants/routeKeys';
+import AuthLayout from '@/features/Auth/authLayout';
 import { useGlobalState } from '@/store/globalReducer';
 
 const RootLayoutWithProps = () => {
@@ -87,6 +88,21 @@ const routeOptions = [
             <History />
           </GuardRoute>
         ),
+      },
+    ],
+  },
+  {
+    // path: routeKeys.login,
+    element: <AuthLayout />,
+    children: [
+      {
+        path: routeKeys.login,
+        index: true,
+        element: <Login />,
+      },
+      {
+        path: routeKeys.register,
+        element: <Register />,
       },
     ],
   },

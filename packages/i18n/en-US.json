@@ -1,10 +1,9 @@
 {
   "common": {
+    "name": "pawHaven",
     "setting": "Settings",
     "brand": "TripSnap",
     "record": "Record Trip",
-    "login": "Sign in",
-    "signin": "Create Account",
     "history": "Trip History",
     "required": "is required",
     "save_continue": "Save & Continue",
@@ -25,8 +24,10 @@
     "owner_text": "© 2023 TripSnap by <a href='https://aoda.vercel.app' target='_blank' rel='noopener noreferrer' class='link'  >Aoda Zhang</a>. Built for learning and sharing. All rights reserved."
   },
   "trip": {},
-  "login": {
-    "primary_login": "LOGIN",
+  "auth": {
+    "signin": "SIGH IN",
+    "auth": "Sign in / Sigh up",
+    "sighup": "SIGH UP",
     "welcome": "Let Love No Longer Stray",
     "newUser": "register",
     "userName": "User name or Email",
@@ -37,17 +38,6 @@
     "current_lan": "English(USA)"
   },
   "home": {
-    "home_page": "Home Page",
-    "title": "Record your short trip with TripSnap",
-    "subTitle": "Discover new distinctions and record you nice memory",
-    "destinations": "Top destinations",
-    "destinations_italy": "Italy",
-    "destinations_himalayas": "Himalayas",
-    "destinations_paris": "Paris",
-    "destinations_morocco": "Morocco",
-    "destinations_greece": "Greece",
-    "destinations_safari": "African Safari",
-    "destinations_egypt": "Egypt",
-    "destinations_china": "China.Great Wall"
+    "home_page": "Home Page"
   }
 }

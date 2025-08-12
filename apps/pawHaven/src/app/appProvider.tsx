@@ -1,9 +1,9 @@
 import { ThemeProvider } from '@mui/material';
-import '@shared/assets/theme/global.css';
-import MUITheme from '@shared/assets/theme/MUI-theme';
+import '@shared/theme/global.css';
 import Loading from '@shared/components/Loading';
 import ErrorPage from '@shared/components/SystemError';
 import getReactQueryOptions from '@shared/cores/react-query';
+import MUITheme from '@shared/theme/MUI-theme';
 import { type ReactNode, Suspense, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Toaster } from 'react-hot-toast';

@@ -1,10 +1,9 @@
 {
   "common": {
+    "name": "pawHaven",
     "setting": "设置",
     "brand": "TripSnap",
     "record": "记录旅程",
-    "login": "登录",
-    "signin": "注册",
     "history": "旅行回忆",
     "required": "是必填项",
     "save_continue": "保存并继续下一步",
@@ -25,9 +24,10 @@
     "owner_text": "© 2023 TripSnap 由 <a href='https://aoda.vercel.app' target='_blank' rel='noopener noreferrer' class='link'>Aoda Zhang</a> 开发。旨在学习和分享。保留所有权利。"
   },
   "trip": {},
-  "login": {
-    "primary_login": "登录",
-    "newUser": "新用户注册",
+  "auth": {
+    "signin": "登录",
+    "auth": "登录 / 注册",
+    "sighup": "注册",
     "welcome": "让爱不再流浪",
     "userName": "用户名或邮箱",
     "password": "密码",
@@ -37,17 +37,6 @@
     "current_lan": "简体中文"
   },
   "home": {
-    "home_page": "主页",
-    "title": "使用TripSnap记录你的短途旅行",
-    "subTitle": "探索新的游玩地，记录属于你的美好回忆",
-    "destinations": "最佳目的地",
-    "destinations_italy": "意大利",
-    "destinations_himalayas": "喜马拉雅山",
-    "destinations_paris": "法国.巴黎",
-    "destinations_morocco": "摩洛哥",
-    "destinations_greece": "希腊",
-    "destinations_safari": "非洲.野生动物园",
-    "destinations_egypt": "埃及",
-    "destinations_china": "中国.万里长城"
+    "home_page": "主页"
   }
 }
