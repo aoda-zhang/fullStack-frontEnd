@@ -3,17 +3,17 @@
 .home {
   @apply flex flex-col;
   .slog {
-    @apply relative flex flex-col justify-center items-center text-center p-[.625rem] mb-5 h-[30vh] lg:h-[50vh] overflow-hidden text-primary;
+    @apply relative flex flex-col lg:flex-row justify-center lg:justify-between items-start lg:items-center text-center p-[.625rem] mb-5 pl-5 lg:pl-10  box-border h-[50vh] lg:h-dvh overflow-hidden;
     &::before {
       content: '';
-      @apply absolute inset-0 bg-center bg-cover z-10;
-      background-image: url('../../../../../packages/assets/images/globe.jpg');
+      @apply absolute inset-0 bg-cover z-0;
+      background-image: url('../../../../../packages/assets/images/hero.png');
     }
     .title {
-      @apply text-[1.5rem] lg:text-[3.125rem] font-bold z-20;
+      @apply text-3xl lg:text-7xl text-start font-bold text-white mb-2 lg:mb-6;
     }
     .subTitle {
-      @apply text-[1rem] lg:text-[1.875rem] z-20;
+      @apply text-sm lg:text-3xl text-start text-gray-200 mb-6 lg:mb-0;
     }
   }
 

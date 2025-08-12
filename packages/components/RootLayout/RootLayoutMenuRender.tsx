@@ -11,6 +11,10 @@ const HeaderActionKeys = {
   openSidebarMenu: 'openSidebarMenu',
   toggleDark: 'toggleDark',
 };
+enum MenuType {
+  link = 'link',
+  component = 'component',
+}
 
 export interface MenuItemType {
   label: string;
@@ -21,17 +25,18 @@ export interface MenuItemType {
   component?: any;
   action?: string; // Explicitly type the action property
   props?: Record<string, any>;
-  type: 'link' | 'component';
+  type: MenuType;
 }
 
 export interface MenuRenderType {
   menuItems: MenuItemType[];
+  activePath: string;
 }
 const RootLayoutMenuRender = (props: MenuRenderType) => {
   const HeaderComponentMappings = {
     LangSwitcher: <LangSwitcher />,
   };
-  const { menuItems } = props;
+  const { menuItems, activePath } = props;
   const { t } = useTranslation();
 
   const toggleDark = (theme: string) => {
@@ -49,17 +54,28 @@ const RootLayoutMenuRender = (props: MenuRenderType) => {
     }
   };
 
-  return menuItems?.map((item) => {
-    const itemClassNames = item?.classNames?.map((name) => styles?.[name]);
-    if (item.type === 'link' && item.to) {
+  const handleLinkMenu = (item: MenuItemType) => {
+    if (item?.to) {
+      const isActiveMenuItem =
+        item.type === MenuType.link && activePath === item?.to;
+      let itemClassNames =
+        item?.classNames?.map((name) => styles?.[name]) ?? [];
+      if (isActiveMenuItem) {
+        // Active the current menu
+        itemClassNames = [...itemClassNames, styles.activeMenu];
+      }
       return (
         <Link key={item.to} to={item.to} className={classNames(itemClassNames)}>
           {t(item.label)}
         </Link>
       );
     }
+    return null;
+  };
 
-    if (item.type === 'component' && item.component) {
+  const handleComponentMenu = (item: MenuItemType) => {
+    if (item?.component) {
+      const itemClassNames = item?.classNames?.map((name) => styles?.[name]);
       const Component =
         HeaderComponentMappings[
           item.component as keyof typeof HeaderComponentMappings
@@ -86,8 +102,18 @@ const RootLayoutMenuRender = (props: MenuRenderType) => {
         </div>
       );
     }
-
     return null;
+  };
+
+  return menuItems?.map((item) => {
+    switch (item.type) {
+      case MenuType.link:
+        return handleLinkMenu(item);
+      case MenuType.component:
+        return handleComponentMenu(item);
+      default:
+        return null;
+    }
   });
 };
 

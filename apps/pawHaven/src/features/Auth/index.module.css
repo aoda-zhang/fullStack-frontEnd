@@ -6,7 +6,7 @@
     @apply flex flex-row max-w-[50vw] m-auto rounded-lg shadow-md transition-all duration-300 ease-in-out bg-white;
     border-radius: 6%;
     .slogan {
-      @apply text-center bg-primary hidden lg:block;
+      @apply text-center bg-primary hidden lg:block space-y-10;
       border-radius: 6%;
       .loginBG {
         width: 100%;
@@ -15,7 +15,7 @@
         border-radius: 8%;
       }
       .sloganText {
-        @apply text-2xl mt-6 font-family-friendly;
+        @apply text-2xl font-family-friendly;
       }
     }
     .loginForm {

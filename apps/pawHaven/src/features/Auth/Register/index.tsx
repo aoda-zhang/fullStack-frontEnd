@@ -60,7 +60,7 @@ const Register: FC = () => {
               });
             })}
           >
-            {t('auth.signin')}
+            {t('auth.login')}
           </Button>
         </form>
       </FormProvider>

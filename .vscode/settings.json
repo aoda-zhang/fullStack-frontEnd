@@ -24,5 +24,8 @@
     ["className\\s*=\\s*\"([^\"]*)", 1],
     ["className\\s*=\\s*{`([^`]*)", 1],
     ["class\\s*=\\s*\"([^\"]*)", 1]
-  ]
+  ],
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

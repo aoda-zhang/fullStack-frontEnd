@@ -56,7 +56,7 @@ const TripSuccess = () => {
               color="primary"
               onClick={goToHistory}
             >
-              {t('common.history')}
+              {t('common.stories')}
             </Button>
           </div>
         </CardContent>

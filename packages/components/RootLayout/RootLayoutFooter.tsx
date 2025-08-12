@@ -21,13 +21,28 @@ const RootLayoutFooter = () => {
       <p dangerouslySetInnerHTML={{ __html: t('common.owner_text') }} />
       <p className={styles.items}>
         <span className={styles.title}>{t('common.contact_me')}</span>
-        <a href={myPersonal.github} className={styles.link} target="_black">
+        <a
+          href={myPersonal.github}
+          className={styles.link}
+          target="_blank"
+          rel="noreferrer"
+        >
           {t('common.github')}
         </a>
-        <a href={myPersonal.email} className={styles.link} target="_black">
+        <a
+          href={myPersonal.email}
+          className={styles.link}
+          target="_blank"
+          rel="noreferrer"
+        >
           {t('common.email')}
         </a>
-        <a href={myPersonal.linkedin} className={styles.link} target="_black">
+        <a
+          href={myPersonal.linkedin}
+          className={styles.link}
+          target="_blank"
+          rel="noreferrer"
+        >
           {t('common.linkedin')}
         </a>
       </p>

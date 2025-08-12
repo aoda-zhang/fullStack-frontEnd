@@ -16,19 +16,19 @@ export const getDefaultDynamicMenu = () => {
     {
       label: 'common.record',
       to: '/trip/basic',
-      classNames: ['item'],
+      classNames: ['menuItem'],
       type: 'link',
     },
     {
-      label: 'common.history',
+      label: 'common.stories',
       to: '/trip/history',
-      classNames: ['item'],
+      classNames: ['menuItem'],
       type: 'link',
     },
     {
       label: 'auth.auth',
       to: '/login',
-      classNames: ['item', 'login'],
+      classNames: ['', 'login'],
       type: 'link',
     },
     {

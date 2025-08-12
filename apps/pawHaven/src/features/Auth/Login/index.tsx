@@ -30,7 +30,7 @@ const Login: FC = () => {
   });
   return (
     <div className={style.loginForm}>
-      <div className={style.welcomeText}>{t('auth.signin')}</div>
+      <div className={style.welcomeText}>{t('auth.login')}</div>
       <FormProvider {...formProps}>
         <form>
           <FormInput
@@ -60,7 +60,7 @@ const Login: FC = () => {
               });
             })}
           >
-            {t('auth.signin')}
+            {t('auth.login')}
           </Button>
         </form>
       </FormProvider>

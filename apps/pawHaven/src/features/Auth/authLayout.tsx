@@ -1,4 +1,4 @@
-import hero from '@shared/assets/images/hero.png';
+import authBanner from '@shared/assets/images/authBanner.png';
 import Brand from '@shared/components/Brand';
 import { type FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -13,7 +13,11 @@ const AuthLayout: FC = () => {
       <Brand />
       <div className={style.contentBox}>
         <div className={style.slogan}>
-          <img src={hero} alt={t('common.slogan')} className={style.loginBG} />
+          <img
+            src={authBanner}
+            alt={t('common.slogan')}
+            className={style.loginBG}
+          />
           <p className={style.sloganText}>{t('common.slogan')}</p>
         </div>
         <Outlet />

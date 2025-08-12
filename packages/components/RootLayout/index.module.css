@@ -14,7 +14,7 @@
   .main {
     @apply flex-1 flex flex-col;
     .content {
-      @apply flex-1 box-border px-4 lg:px-14 pt-10 pb-20;
+      @apply flex-1;
     }
   }
 
@@ -36,15 +36,12 @@
   }
 }
 
-.noMobile {
-  @apply hidden lg:flex;
-}
-.mobile {
-  @apply hidden lg:flex;
-}
 .login {
-  @apply px-[.625rem] py-[.25rem] rounded-[.375rem] bg-primary text-white m-4 lg:m-0;
+  @apply px-2 py-1 rounded-sm bg-primary text-white m-4 lg:m-0 flex justify-center items-center;
 }
-.item {
-  @apply cursor-pointer flex justify-center items-center p-sm border-b border-border md:border-none;
+.activeMenu {
+  @apply block text-primary;
+}
+.menuItem {
+  @apply cursor-pointer flex justify-center items-center p-sm border-b border-border md:border-none hover:text-primary;
 }

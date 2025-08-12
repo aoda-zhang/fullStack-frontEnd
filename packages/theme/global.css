@@ -4,6 +4,7 @@
   /* === Core Colors (Warm & Friendly) === */
   --color-primary: #f4a261; /* warm orange */
   --color-primary-light: #ebe6e7;
+  --color-primary-dark: #f7752a;
 
   --color-secondary: #4caf50;
   --color-background: #faf6f1;
@@ -29,12 +30,6 @@
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
-
-  /* === Border Radius === */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
-  --radius-full: 9999px;
 
   /* === Font Sizes === */
   --font-size-sm: 0.875rem;
@@ -79,4 +74,8 @@
 /* Common style class */
 .link {
   @apply text-primary hover:underline;
+}
+
+.radiusButton {
+  @apply px-3 lg:px-6 py-2 rounded-full cursor-pointer;
 }

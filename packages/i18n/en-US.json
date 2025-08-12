@@ -1,10 +1,10 @@
 {
   "common": {
-    "name": "pawHaven",
+    "name": "PawHaven",
     "setting": "Settings",
     "brand": "TripSnap",
-    "record": "Record Trip",
-    "history": "Trip History",
+    "record": "Record Stray Animals",
+    "stories": "Rescue Stories",
     "required": "is required",
     "save_continue": "Save & Continue",
     "previous": "Previous",
@@ -20,15 +20,15 @@
     "email": "Email",
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "slogan": "Let Love No Longer Stray",
-    "owner_text": "© 2023 TripSnap by <a href='https://aoda.vercel.app' target='_blank' rel='noopener noreferrer' class='link'  >Aoda Zhang</a>. Built for learning and sharing. All rights reserved."
+    "slogan": "No More Stray",
+    "subSlogan": "Spot.Record.Rescue every stray animal!",
+    "owner_text": "© 2023 PawHaven by <a href='https://aoda.vercel.app' target='_blank' rel='noopener noreferrer' class='link'  >Aoda Zhang</a>. All rights reserved."
   },
-  "trip": {},
+  "pawHaven": {},
   "auth": {
-    "signin": "SIGH IN",
-    "auth": "Sign in / Sigh up",
+    "login": "LOG IN",
+    "auth": "Log in / Sigh up",
     "sighup": "SIGH UP",
-    "welcome": "Let Love No Longer Stray",
     "newUser": "register",
     "userName": "User name or Email",
     "password": "Password",

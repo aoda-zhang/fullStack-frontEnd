@@ -1,10 +1,10 @@
 {
   "common": {
-    "name": "pawHaven",
+    "name": "PawHaven",
     "setting": "设置",
     "brand": "TripSnap",
-    "record": "记录旅程",
-    "history": "旅行回忆",
+    "record": "上报流浪动物",
+    "stories": "救助故事",
     "required": "是必填项",
     "save_continue": "保存并继续下一步",
     "previous": "上一步",
@@ -18,14 +18,15 @@
     "quick_links": "快速链接",
     "contact_me": "联系我",
     "slogan": "让生命不再流浪",
+    "subSlogan": "发现，记录，拯救每一只流浪动物！",
     "email": "Email",
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "owner_text": "© 2023 TripSnap 由 <a href='https://aoda.vercel.app' target='_blank' rel='noopener noreferrer' class='link'>Aoda Zhang</a> 开发。旨在学习和分享。保留所有权利。"
+    "owner_text": "© 2023 PawHaven 由 <a href='https://aoda.vercel.app' target='_blank' rel='noopener noreferrer' class='link'>Aoda Zhang</a> 开发。保留所有权利。"
   },
-  "trip": {},
+  "pawHaven": {},
   "auth": {
-    "signin": "登录",
+    "login": "登录",
     "auth": "登录 / 注册",
     "sighup": "注册",
     "welcome": "让爱不再流浪",
