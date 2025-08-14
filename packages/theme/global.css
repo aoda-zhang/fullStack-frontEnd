@@ -76,6 +76,6 @@
   @apply text-primary hover:underline;
 }
 
-.radiusButton {
-  @apply px-3 lg:px-6 py-2 rounded-full cursor-pointer;
+.roundedButton {
+  @apply px-6 py-3 font-semibold rounded-full transition cursor-pointer;
 }

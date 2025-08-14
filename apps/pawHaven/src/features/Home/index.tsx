@@ -19,24 +19,25 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <div className={styles.slog}>
-        <div className="z-10">
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative z-10 text-center text-white px-4">
           <p className={styles.title}>{t('common.slogan')}</p>
           <p className={styles.subTitle}>{t('common.subSlogan')}</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
+            <button
+              type="button"
+              className="roundedButton text-xl bg-primary text-white hover:bg-primary-dark "
+            >
+              Spot a Friend
+            </button>
+            <button
+              type="button"
+              className="roundedButton text-xl bg-white text-primary  hover:bg-gray-100 "
+            >
+              Help a Friend
+            </button>
+          </div>
         </div>
-        <p className="z-10">
-          <button
-            className="radiusButton text-lg lg:text-2xl text-white bg-primary mr-8 mb-3 lg:mb-0"
-            type="button"
-          >
-            参与救助
-          </button>
-          <button
-            type="button"
-            className="radiusButton text-lg lg:text-2xl text-white bg-secondary"
-          >
-            参与救助
-          </button>
-        </p>
       </div>
     </div>
   );
