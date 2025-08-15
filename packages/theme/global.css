@@ -3,21 +3,24 @@
 @theme {
   /* === Core Colors (Warm & Friendly) === */
   --color-primary: #f4a261; /* warm orange */
-  --color-primary-light: #ebe6e7;
-  --color-primary-dark: #f7752a;
+  --color-primary-light: #f9d6b5; /* softer light orange */
+  --color-primary-dark: #f7752a; /* deeper warm orange */
 
-  --color-secondary: #4caf50;
-  --color-background: #faf6f1;
-  --color-surface: #ffffff;
+  --color-secondary: #4caf50; /* nature green */
+  --color-secondary-light: #81c784; /* soft green */
+  --color-secondary-dark: #388e3c; /* deep green */
 
-  --color-text: #2f2f2f;
-  --color-text-secondary: #6b6b6b;
-  --color-border: #dcd7d3;
-  --color-accent: #3b82f6;
+  --color-background: #faf6f1; /* warm off-white */
+  --color-surface: #ffffff; /* pure white for cards */
+
+  --color-text: #2f2f2f; /* main text */
+  --color-text-secondary: #6b6b6b; /* secondary text */
+  --color-border: #e0dcd6; /* softer border */
+  --color-accent: #3b82f6; /* sky blue for links/buttons */
 
   /* === Neutral Colors === */
-  --color-neutral: #a8a29e;
-  --color-muted: #e7e5e4;
+  --color-neutral: #9e9e9e; /* neutral grey */
+  --color-muted: #f0eeeb; /* background-muted */
 
   /* === Semantic Colors === */
   --color-error: #ef4444;
@@ -43,9 +46,8 @@
 
   /* === Font Families === */
   --font-family-sans: 'Inter', 'Nunito', sans-serif;
-  --font-family-friendly:
-    'Poppins', 'Nunito', 'Helvetica', 'Arial',
-    sans-serif --font-family-serif: 'Merriweather', serif;
+  --font-family-friendly: 'Poppins', 'Nunito', 'Helvetica', 'Arial', sans-serif;
+  --font-family-serif: 'Merriweather', serif;
   --font-family-handwriting: 'Patrick Hand', cursive;
 }
 

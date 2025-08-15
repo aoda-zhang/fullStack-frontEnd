@@ -1,21 +1,24 @@
 const designTokens = {
   colors: {
     primary: '#F4A261',
-    primaryLight: '#F6BD85',
-    primaryDark: '#E0762F',
+    primaryLight: '#F9D6B5', // softer light orange
+    primaryDark: '#f7752a', // deeper warm orange
 
     secondary: '#4CAF50',
     secondaryLight: '#81C784',
     secondaryDark: '#388E3C',
 
-    background: '#FAF6F1',
-    surface: '#FFFFFF',
+    background: '#FAF6F1', // warm off-white
+    surface: '#FFFFFF', // pure white for cards
 
     textPrimary: '#2F2F2F',
     textSecondary: '#6B6B6B',
 
-    divider: '#DCD7D3',
-    accent: '#3B82F6',
+    divider: '#E0DCD6', // softer border
+    accent: '#3B82F6', // sky blue
+
+    neutral: '#9E9E9E', // neutral grey
+    muted: '#F0EEEB', // muted background
 
     error: '#EF4444',
     success: '#4CAF50',
@@ -25,7 +28,10 @@ const designTokens = {
     base: 4, // used for MUI (4px)
   },
   font: {
-    familySans: `'Inter', sans-serif`,
+    familySans: `'Inter', 'Nunito', sans-serif`,
+    familyFriendly: `'Poppins', 'Nunito', 'Helvetica', 'Arial', sans-serif`,
+    familySerif: `'Merriweather', serif`,
+    familyHandwriting: `'Patrick Hand', cursive`,
     baseSize: 16,
   },
 };

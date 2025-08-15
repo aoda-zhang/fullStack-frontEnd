@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="375" height="812" viewBox="0 0 375 812" font-family="Inter, Poppins, Arial, sans-serif">
+  <title>PawHaven Homepage (Editable SVG)</title>
+  <defs>
+    <style><![CDATA[
+      .bg { fill: #FAF6F1; }
+      .surface { fill: #FFFFFF; }
+      .textPrimary { fill: #2F2F2F; }
+      .textSecondary { fill: #6B6B6B; }
+      .primary { fill: #F4A261; }
+      .primary-dark { fill: #E0762F; }
+      .secondary { fill: #4CAF50; }
+      .accent { fill: #3B82F6; }
+      .divider { stroke: #E0DCD6; }
+      .shadow { filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12)); }
+      .btnText { font-weight: 600; fill: #ffffff; }
+      .btnOutlineText { font-weight: 600; fill: #E0762F; }
+    ]]></style>
+
+    <linearGradient id="heroGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.45"/>
+    </linearGradient>
+
+    <pattern id="heroPhoto" patternUnits="objectBoundingBox" width="1" height="1">
+      <image href="https://images.unsplash.com/photo-1558944351-c6ae7f76f10f?q=80&w=1600&auto=format&fit=crop" x="0" y="0" width="375" height="406" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="375" height="812"/>
+
+  <g id="Hero">
+    <rect x="0" y="0" width="375" height="406" fill="url(#heroPhoto)"/>
+    <rect x="0" y="0" width="375" height="406" fill="url(#heroGrad)"/>
+
+    <g id="Hero-EN" data-lang="en">
+      <text x="187.5" y="179.0" text-anchor="middle" font-size="32" font-weight="700" fill="#FFFFFF">See them. Save them. Every stray matters.</text>
+      <text x="187.5" y="221.0" text-anchor="middle" font-size="15" fill="#FFFFFF" opacity="0.95">A warm, open-source platform to report, share, and rescue.</text>
+    </g>
+
+    <g id="Hero-ZH" data-lang="zh" display="none">
+      <text x="187.5" y="179.0" text-anchor="middle" font-size="32" font-weight="700" fill="#FFFFFF">看见他们，守护他们，每一条生命都重要</text>
+      <text x="187.5" y="221.0" text-anchor="middle" font-size="15" fill="#FFFFFF" opacity="0.95">一个温暖的开源平台：发现、记录、分享与救助。</text>
+    </g>
+
+    <g id="Hero-Buttons" transform="translate(9.5,247.0)">
+      <g id="Btn-Primary" class="shadow">
+        <rect width="170" height="44" rx="22.0" ry="22.0" class="primary"/>
+        <text x="85.0" y="28.0" text-anchor="middle" class="btnText" font-size="14">Spot a Friend</text>
+        <title>ZH: 发现朋友</title>
+      </g>
+      <g id="Btn-Outline" transform="translate(186,0)">
+        <rect width="170" height="44" rx="22.0" ry="22.0" fill="#FFFFFF" stroke="#E0762F" stroke-width="2"/>
+        <text x="85.0" y="28.0" text-anchor="middle" class="btnOutlineText" font-size="14">Help a Friend</text>
+        <title>ZH: 帮助朋友</title>
+      </g>
+    </g>
+  </g>
+
+  <g id="Latest-Rescues" transform="translate(16,422)">
+    <text class="textPrimary" x="0" y="0" font-size="22" font-weight="700">Latest Rescues • 最新救助</text>
+    <g id="Cards" transform="translate(0, 16)">
+      <g transform="translate(0,0)"><rect class="surface shadow" width="343" height="180" rx="14"/><text x="16" y="40" class="textPrimary" font-weight="600">Lucky • 待救助</text><text x="16" y="68" class="textSecondary" font-size="13">Downtown • 2km</text></g><g transform="translate(0,196)"><rect class="surface shadow" width="343" height="180" rx="14"/><text x="16" y="40" class="textPrimary" font-weight="600">Mimi • 进行中</text><text x="16" y="68" class="textSecondary" font-size="13">Riverside • 5km</text></g><g transform="translate(0,392)"><rect class="surface shadow" width="343" height="180" rx="14"/><text x="16" y="40" class="textPrimary" font-weight="600">Buddy • 已救助</text><text x="16" y="68" class="textSecondary" font-size="13">West Park • 1km</text></g>
+    </g>
+  </g>
+
+  <g id="Stories" transform="translate(16,762)">
+    <text class="textPrimary" x="0" y="0" font-size="22" font-weight="700">Rescue Stories • 故事分享</text>
+    <g transform="translate(0,16)">
+      <rect class="surface shadow" width="343" height="160" rx="16"/>
+      <text x="24" y="40" class="textPrimary" font-weight="600">"We found Coco near the station and volunteers came within 30 minutes."</text>
+      <text x="24" y="68" class="textSecondary" font-size="13">— Aoda, Volunteer • 志愿者</text>
+    </g>
+  </g>
+
+  <g id="HowToJoin" transform="translate(16,532)">
+    <text class="textPrimary" x="0" y="0" font-size="22" font-weight="700">How to Join • 如何参与</text>
+    <g transform="translate(0,16)">
+      <g><circle cx="20" cy="20" r="20" class="secondary"/><text x="52" y="26" class="textPrimary" font-weight="600" font-size="14">Spot → 发现</text></g><g transform="translate(0,44)"><circle cx="20" cy="20" r="20" class="primary"/><text x="52" y="26" class="textPrimary" font-weight="600" font-size="14">Record → 记录</text></g><g transform="translate(0,88)"><circle cx="20" cy="20" r="20" class="accent"/><text x="52" y="26" class="textPrimary" font-weight="600" font-size="14">Rescue → 帮助</text></g>
+    </g>
+  </g>
+
+  <g id="Footer" transform="translate(0,732)">
+    <rect class="surface" x="0" y="0" width="375" height="80"/>
+    <line class="divider" x1="0" y1="0" x2="375" y2="0" stroke-width="1"/>
+    <text x="16" y="50" class="textSecondary" font-size="14">© PawHaven • GitHub: aoda-zhang • Email: aodazhang666@gmail.com • EN/ZH</text>
+  </g>
+</svg>
