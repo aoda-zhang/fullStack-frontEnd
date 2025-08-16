@@ -27,6 +27,15 @@
   --color-success: #4caf50;
   --color-warning: #f59e0b;
 
+  /* rescue status colors */
+  --color-rescue-pending: #f59e0b; /* pending rescue */
+  --color-rescue-inProgress: #3b82f6; /* in-progress rescue */
+  --color-rescue-treated: #8b5cf6; /* treated */
+  --color-rescue-recovering: #10b981; /* recovering */
+  --color-rescue-awaitingAdoption: #fbbf24; /* awaiting adoption */
+  --color-rescue-adopted: #22c55e; /* adopted */
+  --color-rescue-failed: #6b7280; /* failed rescue */
+
   /* === Spacing === */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -35,14 +44,35 @@
   --spacing-xl: 2rem;
 
   /* === Font Sizes === */
-  --font-size-sm: 0.875rem;
-  --line-height-sm: 1.25rem;
-  --font-size-base: 1rem;
-  --line-height-base: 1.5rem;
-  --font-size-lg: 1.125rem;
-  --line-height-lg: 1.75rem;
-  --font-size-xl: 1.25rem;
-  --line-height-xl: 1.75rem;
+  --font-size-xs: 0.75rem; /* 12px */
+  --line-height-xs: 1rem; /* 16px */
+
+  --font-size-sm: 0.875rem; /* 14px */
+  --line-height-sm: 1.25rem; /* 20px */
+
+  --font-size-base: 1rem; /* 16px */
+  --line-height-base: 1.5rem; /* 24px */
+
+  --font-size-lg: 1.125rem; /* 18px */
+  --line-height-lg: 1.75rem; /* 28px */
+
+  --font-size-xl: 1.25rem; /* 20px */
+  --line-height-xl: 1.75rem; /* 28px */
+
+  --font-size-2xl: 1.5rem; /* 24px */
+  --line-height-2xl: 2rem; /* 32px */
+
+  --font-size-3xl: 1.875rem; /* 30px */
+  --line-height-3xl: 2.25rem; /* 36px */
+
+  --font-size-4xl: 2.25rem; /* 36px */
+  --line-height-4xl: 2.5rem; /* 40px */
+
+  --font-size-5xl: 3rem; /* 48px */
+  --line-height-5xl: 1;
+
+  --font-size-6xl: 3.75rem; /* 60px */
+  --line-height-6xl: 1;
 
   /* === Font Families === */
   --font-family-sans: 'Inter', 'Nunito', sans-serif;

@@ -22,9 +22,20 @@
     "email": "Email",
     "github": "GitHub",
     "linkedin": "LinkedIn",
+    "view_all": "查看全部",
+    "love_story": "爱心故事",
     "owner_text": "© 2023 PawHaven 由 <a href='https://aoda.vercel.app' target='_blank' rel='noopener noreferrer' class='link'>Aoda Zhang</a> 开发。保留所有权利。"
   },
-  "pawHaven": {},
+  "pawHaven": {
+    "recent_rescue": "近期救助动态",
+    "rescue_status_pending": "待处理",
+    "rescue_status_inProgress": "处理中",
+    "rescue_status_treated": "已救助",
+    "rescue_status_recovering": "康复中",
+    "rescue_status_awaitingAdoption": "等待领养",
+    "rescue_status_adopted": "已领养",
+    "rescue_status_failed": "救助失败"
+  },
   "auth": {
     "login": "登录",
     "auth": "登录 / 注册",

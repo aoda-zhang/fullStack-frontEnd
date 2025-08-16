@@ -7,7 +7,7 @@
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.quickSuggestions": {
-    "strings": true
+    "strings": "on"
   },
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "css.lint.unknownAtRules": "ignore",
@@ -23,11 +23,18 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  },
+  "tailwindCSS.emmetCompletions": true,
   "tailwindCSS.experimental.classRegex": [
     ["className\\s*=\\s*\"([^\"]*)", 1],
     ["className\\s*=\\s*{`([^`]*)", 1],
     ["class\\s*=\\s*\"([^\"]*)", 1]
   ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }

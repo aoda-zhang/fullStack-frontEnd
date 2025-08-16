@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-start">
           <button
             type="button"
-            className="roundedButton text-xl bg-primary text-white hover:bg-primary-dark "
+            className="roundedButton text-xl bg-primary text-white hover:bg-primary-dark"
           >
             Spot a Friend
           </button>

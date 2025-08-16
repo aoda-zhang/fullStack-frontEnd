@@ -3,7 +3,7 @@ import { memo, useEffect } from 'react';
 import { useDefaultMenu } from './apis/queries';
 import Hero from './Hero';
 import styles from './index.module.css';
-import RecentRescue from './RecentRescue';
+import LatestRescue from './LatestRescue';
 import RecentStory from './RecentStory';
 
 import { useReduxDispatch } from '@/hooks/reduxHooks';
@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <Hero />
-      <RecentRescue />
+      <LatestRescue />
       <RecentStory />
     </div>
   );
