@@ -5,7 +5,7 @@
 ![React](https://img.shields.io/badge/React-20232a?logo=react&logoColor=61dafb)
 ![pnpm](https://img.shields.io/badge/Package-pnpm-F69220?logo=pnpm&logoColor=white)
 ![License](https://img.shields.io/github/license/aoda-zhang/fullStack-frontEnd)
-[![brand.png](https://i.postimg.cc/pTjjMYt8/brand.png)](https://postimg.cc/Q9XCp7Cx)
+[![logo.png](https://i.postimg.cc/wBfGBBYS/logo.png)](https://postimg.cc/XZ58H4J8)
 
 ## ✨ What is this?
 
