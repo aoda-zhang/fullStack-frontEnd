@@ -34,7 +34,7 @@ const FormSingleDateRanger: FC<FormSingleDateRangerProps> = ({
     if (props?.required && !rules?.required) {
       return {
         ...rules,
-        required: `${t(label ?? 'This Field')} ${t('common.required')}`,
+        required: `${t(label ?? '')} ${t('common.required')}`,
       };
     }
     return rules;

@@ -1,9 +1,13 @@
+import Loading from '@shared/components/Loading';
 import RootLayout from '@shared/components/RootLayout';
-import { lazy } from 'react';
+import { lazy, ReactNode, Suspense } from 'react';
 import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
+  useMatches,
+  useNavigate,
+  Outlet,
 } from 'react-router-dom';
 
 import GuardRoute from '@/components/GuardRoute';
@@ -11,20 +15,31 @@ import routeKeys from '@/constants/routeKeys';
 import AuthLayout from '@/features/Auth/authLayout';
 import { useGlobalState } from '@/store/globalReducer';
 
+const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
+  return <Suspense fallback={<Loading />}>{children}</Suspense>;
+};
+
 const RootLayoutWithProps = () => {
   const { menuItems } = useGlobalState();
-  return <RootLayout menuItems={menuItems} />;
+  const navigate = useNavigate();
+  const routerMatches = useMatches();
+  return (
+    <RootLayout
+      menuItems={menuItems}
+      navigate={navigate}
+      routerMatches={routerMatches}
+    >
+      <Outlet />
+    </RootLayout>
+  );
 };
+
 const Home = lazy(() => import('@/features/Home'));
-const TripLayout = lazy(() => import('@/features/Record/tripLayout'));
-const TripBasic = lazy(() => import('@/features/Record/Basic'));
-const TripDetail = lazy(() => import('@/features/Record/Detail'));
-const TripSummary = lazy(() => import('@/features/Record/Summary'));
-const TripSuccess = lazy(() => import('@/features/Record/Success'));
 const History = lazy(() => import('@/features/History'));
 const Login = lazy(() => import('@/features/Auth/Login'));
 const Register = lazy(() => import('@/features/Auth/Register'));
 const NotFund = lazy(() => import('@shared/components/NotFund'));
+
 const routeOptions = [
   {
     path: routeKeys.home,
@@ -34,96 +49,67 @@ const routeOptions = [
         path: routeKeys.home,
         index: true,
         element: (
-          <GuardRoute isRequireUserLogin={false}>
+          <SuspenseWrapper>
             <Home />
-          </GuardRoute>
+          </SuspenseWrapper>
         ),
-      },
-      {
-        path: routeKeys.trip,
-        element: (
-          <GuardRoute>
-            <TripLayout />
-          </GuardRoute>
-        ),
-        children: [
-          {
-            path: routeKeys.tripBasic,
-            element: (
-              <GuardRoute>
-                <TripBasic />
-              </GuardRoute>
-            ),
-          },
-          {
-            path: routeKeys.tripDetail,
-            element: (
-              <GuardRoute>
-                <TripDetail />
-              </GuardRoute>
-            ),
-          },
-          {
-            path: routeKeys.tripSummary,
-            element: (
-              <GuardRoute>
-                <TripSummary />
-              </GuardRoute>
-            ),
-          },
-          {
-            path: routeKeys.tripSuccess,
-            element: (
-              <GuardRoute>
-                <TripSuccess />
-              </GuardRoute>
-            ),
-          },
-        ],
       },
       {
         path: routeKeys.history,
         element: (
           <GuardRoute>
-            <History />
+            <SuspenseWrapper>
+              <History />
+            </SuspenseWrapper>
           </GuardRoute>
         ),
+      },
+      {
+        path: '*',
+        element: <Navigate to={routeKeys.notFund} replace />,
       },
     ],
   },
   {
-    // path: routeKeys.login,
     element: <AuthLayout />,
     children: [
       {
         path: routeKeys.login,
         index: true,
-        element: <Login />,
+        element: (
+          <SuspenseWrapper>
+            <Login />
+          </SuspenseWrapper>
+        ),
       },
       {
         path: routeKeys.register,
-        element: <Register />,
+        element: (
+          <SuspenseWrapper>
+            <Register />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: '*',
+        element: <Navigate to={routeKeys.notFund} replace />,
       },
     ],
   },
   {
-    path: routeKeys.login,
-    element: <Login />,
-  },
-  {
-    path: routeKeys.register,
-    element: <Register />,
-  },
-  {
     path: routeKeys.notFund,
-    element: <NotFund />,
+    element: (
+      <SuspenseWrapper>
+        <NotFund />
+      </SuspenseWrapper>
+    ),
   },
-
   {
     path: '*',
     element: <Navigate to={routeKeys.notFund} replace />,
   },
 ];
+
 const routes = createBrowserRouter(routeOptions);
 
 const AppRouterProvider = () => {

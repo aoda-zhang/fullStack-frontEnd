@@ -26,7 +26,7 @@ const FormTextArea: React.FC<BaseFormType & TextareaAutosizeProps> = ({
     if (props?.required && !rules?.required) {
       return {
         ...rules,
-        required: `${t(String(label || ''))} ${t('common.required')}`,
+        required: `${t(label ?? '')} ${t('common.required')}`,
       };
     }
     return rules;

@@ -1,13 +1,13 @@
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { NavigateFunction } from 'react-router-dom';
 
 import logoImg from '../../assets/images/logo.png';
 
 import styles from './index.module.css';
 
-const Brand = () => {
+const Brand = ({ navigate }: { navigate: NavigateFunction }) => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+
   return (
     <button
       type="button"

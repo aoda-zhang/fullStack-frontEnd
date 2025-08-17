@@ -25,7 +25,7 @@ const FormCheckbox: React.FC<BaseFormType & CheckboxProps> = ({
     if (props?.required && !rules?.required) {
       return {
         ...rules,
-        required: `${t(label)} ${t('common.required')}`,
+        required: `${t(label ?? '')} ${t('common.required')}`,
       };
     }
     return rules;

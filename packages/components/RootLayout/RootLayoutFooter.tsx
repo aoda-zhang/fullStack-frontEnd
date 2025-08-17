@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import myPersonal from '../../constants/myPerson';
 
@@ -11,12 +11,12 @@ const RootLayoutFooter = () => {
     <div className={styles.footer}>
       <p className={styles.items}>
         <span className={styles.title}>{t('common.quick_links')}</span>
-        <Link className={styles.link} to="/">
+        {/* <Link className={styles.link} to="/">
           {t('home.home_page')}
         </Link>
         <Link className={styles.link} to="/trip/basic">
           {t('common.record')}
-        </Link>
+        </Link> */}
       </p>
       <p dangerouslySetInnerHTML={{ __html: t('common.owner_text') }} />
       <p className={styles.items}>

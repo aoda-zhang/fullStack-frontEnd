@@ -4,10 +4,7 @@ import storage from 'redux-persist/lib/storage';
 import globalReducer from './globalReducer';
 import reducerNames from './reducerNames';
 
-import tripReducer from '@/features/Record/tripReducer';
-
 export const combinedReducers = {
-  [reducerNames.trip]: tripReducer,
   [reducerNames.global]: globalReducer,
 };
 

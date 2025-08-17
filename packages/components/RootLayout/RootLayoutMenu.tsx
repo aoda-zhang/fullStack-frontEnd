@@ -1,6 +1,6 @@
 import { AlignJustify } from 'lucide-react';
 import { useState } from 'react';
-import { useMatches, useNavigate } from 'react-router-dom';
+import { NavigateFunction, UIMatch } from 'react-router-dom';
 
 import useIsMobile from '../../hooks/useIsMobile';
 import Brand from '../Brand';
@@ -22,14 +22,20 @@ interface RouterInfoType {
 
 export interface RootLayoutHeaderProps {
   menuItems: MenuItemType[];
+  navigate: NavigateFunction;
+  routerMatches?: UIMatch<unknown, unknown>[];
 }
 
-const RootLayoutMenu = ({ menuItems }: RootLayoutHeaderProps) => {
+const RootLayoutMenu = ({
+  menuItems,
+  navigate,
+  routerMatches,
+}: RootLayoutHeaderProps) => {
   const isMobile = useIsMobile();
-  const navigate = useNavigate();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const matches = useMatches();
-  const currentRouter = matches?.[(matches?.length ?? 0) - 1] as RouterInfoType;
+  const currentRouter = routerMatches?.[
+    (routerMatches?.length ?? 0) - 1
+  ] as RouterInfoType;
   const isMenuAvailable = !currentRouter?.handle?.isMenuAvailable;
 
   const onOpenSidebar = () => setSidebarOpen(true);
@@ -46,12 +52,13 @@ const RootLayoutMenu = ({ menuItems }: RootLayoutHeaderProps) => {
           navigate('/');
         }}
       >
-        <Brand />
+        <Brand navigate={navigate} />
       </button>
       {!isMobile && (
         <RootLayoutMenuRender
           menuItems={menuItems}
           activePath={currentRouter?.pathname || ''}
+          navigate={navigate}
         />
       )}
 
@@ -62,6 +69,7 @@ const RootLayoutMenu = ({ menuItems }: RootLayoutHeaderProps) => {
         menuItems={menuItems}
         isSidebarOpen={isSidebarOpen}
         onCloseSidebar={onCloseSidebar}
+        navigate={navigate}
       />
     </header>
   );

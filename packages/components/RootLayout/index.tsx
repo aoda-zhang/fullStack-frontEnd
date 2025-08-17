@@ -1,5 +1,5 @@
-import { memo } from 'react';
-import { Outlet } from 'react-router-dom';
+import { memo, ReactNode } from 'react';
+import { NavigateFunction, UIMatch } from 'react-router-dom';
 
 import styles from './index.module.css';
 import RootLayoutFooter from './RootLayoutFooter';
@@ -13,16 +13,26 @@ export interface GlobalStateType {
 
 export interface LayoutProps {
   menuItems: MenuItemType[];
+  navigate: NavigateFunction;
+  routerMatches: UIMatch<unknown, unknown>[];
+  children?: ReactNode;
 }
 
-const RootLayout = ({ menuItems = [] }: LayoutProps) => {
+const RootLayout = ({
+  menuItems = [],
+  navigate,
+  routerMatches,
+  children,
+}: LayoutProps) => {
   return (
     <div className={styles.layout}>
-      <RootLayoutMenu menuItems={menuItems} />
+      <RootLayoutMenu
+        menuItems={menuItems}
+        navigate={navigate}
+        routerMatches={routerMatches}
+      />
       <div className={styles.main}>
-        <div className={styles.content}>
-          <Outlet />
-        </div>
+        <div className={styles.content}>{children}</div>
         <RootLayoutFooter />
       </div>
     </div>

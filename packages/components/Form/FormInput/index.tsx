@@ -22,7 +22,10 @@ const FormInput: React.FC<
   const { control } = useFormContext();
   const formRules = useMemo(() => {
     if (props?.required && !rules?.required) {
-      return { ...rules, required: `${t(label)} ${t('common.required')}` };
+      return {
+        ...rules,
+        required: `${t(label ?? '')} ${t('common.required')}`,
+      };
     }
     return rules;
   }, [rules, props?.required, label, t]);

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { cloneElement } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { NavigateFunction } from 'react-router-dom';
 
 import LangSwitcher from '../LangSwitcher';
 
@@ -30,13 +30,14 @@ export interface MenuItemType {
 
 export interface MenuRenderType {
   menuItems: MenuItemType[];
-  activePath: string;
+  activePath?: string;
+  navigate: NavigateFunction;
 }
 const RootLayoutMenuRender = (props: MenuRenderType) => {
   const HeaderComponentMappings = {
     LangSwitcher: <LangSwitcher />,
   };
-  const { menuItems, activePath } = props;
+  const { menuItems, activePath, navigate } = props;
   const { t } = useTranslation();
 
   const toggleDark = (theme: string) => {
@@ -65,9 +66,15 @@ const RootLayoutMenuRender = (props: MenuRenderType) => {
         itemClassNames = [...itemClassNames, styles.activeMenu];
       }
       return (
-        <Link key={item.to} to={item.to} className={classNames(itemClassNames)}>
+        <button
+          type="button"
+          className={classNames(itemClassNames)}
+          onClick={() => {
+            navigate(item.to || '/');
+          }}
+        >
           {t(item.label)}
-        </Link>
+        </button>
       );
     }
     return null;

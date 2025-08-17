@@ -7,8 +7,8 @@ import systemError from '../../assets/images/sysError.svg';
 import styles from './index.module.css';
 
 const NotFund = () => {
-  const navigate = useNavigate();
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const goToHome = () => {
     navigate('/');
