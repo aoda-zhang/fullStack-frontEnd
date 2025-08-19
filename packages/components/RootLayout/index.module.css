@@ -37,7 +37,7 @@
 }
 
 .login {
-  @apply px-2 py-1 rounded-sm bg-primary text-white m-4 lg:m-0 flex justify-center items-center;
+  @apply px-3 py-2 rounded-sm bg-primary text-white m-4 lg:m-0 flex justify-center items-center cursor-pointer;
 }
 .activeMenu {
   @apply block text-primary;

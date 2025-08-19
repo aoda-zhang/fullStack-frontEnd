@@ -35,15 +35,15 @@ const rescues: RescueItemType[] = [
     img: 'https://d.newsweek.com/en/full/2050102/stray-cats.jpg?w=1200&f=7d728c9cbd5cd73470c100ff9cd51d59',
     description:
       '一只活泼好动的狗狗，喜欢户外活动，需要一个有爱心的家庭来照顾它。',
-    location: 'asda',
+    location: '巴黎时尚界',
     time: '2023-10-20 12:00',
     status: 'treated',
   },
   {
     name: '乐乐',
     img: 'https://media.4-paws.org/1/b/1/4/1b14c5ffc386210e11c20c5dd139b772af045503/VIER%20PFOTEN_2023-10-19_00181-3801x2534-3662x2534-1920x1329.jpg',
-    description: '一只温柔乖巧的兔子，喜欢安静的环境，适合室内养护。',
-    location: 'asda',
+    description: '一只温柔乖巧的狗子，喜欢安静的环境，适合室内养护。',
+    location: '香港中环',
     time: '2023-10-20 12:00',
     status: 'awaitingAdoption',
   },

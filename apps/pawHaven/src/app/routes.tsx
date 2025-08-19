@@ -1,19 +1,26 @@
 import Loading from '@shared/components/Loading';
+import NotFund from '@shared/components/NotFund';
 import RootLayout from '@shared/components/RootLayout';
 import { lazy, ReactNode, Suspense } from 'react';
 import {
   createBrowserRouter,
-  Navigate,
   RouterProvider,
   useMatches,
   useNavigate,
   Outlet,
+  RouteObject,
 } from 'react-router-dom';
 
 import GuardRoute from '@/components/GuardRoute';
-import routeKeys from '@/constants/routeKeys';
+import routePaths from '@/constants/routePaths';
 import AuthLayout from '@/features/Auth/authLayout';
+import Home from '@/features/Home';
 import { useGlobalState } from '@/store/globalReducer';
+
+export interface RouteMetaType {
+  isRequireUserLogin?: boolean;
+  children?: ReactNode;
+}
 
 const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
   return <Suspense fallback={<Loading />}>{children}</Suspense>;
@@ -23,90 +30,76 @@ const RootLayoutWithProps = () => {
   const { menuItems } = useGlobalState();
   const navigate = useNavigate();
   const routerMatches = useMatches();
+  const currentRouteMeta: RouteMetaType =
+    routerMatches[routerMatches.length - 1]?.handle ?? {};
   return (
     <RootLayout
       menuItems={menuItems}
       navigate={navigate}
       routerMatches={routerMatches}
     >
-      <Outlet />
+      <GuardRoute {...currentRouteMeta} routerMatches={routerMatches}>
+        <Outlet />
+      </GuardRoute>
     </RootLayout>
   );
 };
-
-const Home = lazy(() => import('@/features/Home'));
 const History = lazy(() => import('@/features/History'));
 const Login = lazy(() => import('@/features/Auth/Login'));
 const Register = lazy(() => import('@/features/Auth/Register'));
-const NotFund = lazy(() => import('@shared/components/NotFund'));
 
-const routeOptions = [
+const routeOptions: RouteObject[] = [
   {
-    path: routeKeys.home,
-    element: <RootLayoutWithProps />,
-    children: [
-      {
-        path: routeKeys.home,
-        index: true,
-        element: (
-          <SuspenseWrapper>
-            <Home />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: routeKeys.history,
-        element: (
-          <GuardRoute>
-            <SuspenseWrapper>
-              <History />
-            </SuspenseWrapper>
-          </GuardRoute>
-        ),
-      },
-      {
-        path: '*',
-        element: <Navigate to={routeKeys.notFund} replace />,
-      },
-    ],
-  },
-  {
-    element: <AuthLayout />,
-    children: [
-      {
-        path: routeKeys.login,
-        index: true,
-        element: (
-          <SuspenseWrapper>
-            <Login />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: routeKeys.register,
-        element: (
-          <SuspenseWrapper>
-            <Register />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: '*',
-        element: <Navigate to={routeKeys.notFund} replace />,
-      },
-    ],
-  },
-  {
-    path: routeKeys.notFund,
+    path: routePaths.home,
     element: (
+      <SuspenseWrapper>
+        <RootLayoutWithProps />
+      </SuspenseWrapper>
+    ),
+    errorElement: <NotFund />,
+    children: [
+      {
+        index: true,
+        handle: { isRequireUserLogin: false },
+        element: <Home />,
+      },
+      {
+        path: routePaths.history,
+        element: <History />,
+      },
+      {
+        path: '*',
+        element: (
+          <SuspenseWrapper>
+            <NotFund />
+          </SuspenseWrapper>
+        ),
+      },
+    ],
+  },
+  {
+    element: (
+      <SuspenseWrapper>
+        <AuthLayout />
+      </SuspenseWrapper>
+    ),
+    errorElement: (
       <SuspenseWrapper>
         <NotFund />
       </SuspenseWrapper>
     ),
-  },
-  {
-    path: '*',
-    element: <Navigate to={routeKeys.notFund} replace />,
+    children: [
+      {
+        path: routePaths.login,
+        handle: { isRequireUserLogin: false },
+        element: <Login />,
+      },
+      {
+        path: routePaths.register,
+        handle: { isRequireUserLogin: false },
+        element: <Register />,
+      },
+    ],
   },
 ];
 

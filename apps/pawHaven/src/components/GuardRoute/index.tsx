@@ -1,25 +1,34 @@
 import storageKeys from '@shared/constants/storageKeys';
 import storageTool from '@shared/utils/storage';
-import { ReactNode, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { UIMatch, useNavigate } from 'react-router-dom';
 
-import routeKeys from '@/constants/routeKeys';
+import { RouteMetaType } from '@/app/routes';
+import routePaths from '@/constants/routePaths';
 
-interface GuardRouteProps {
-  isRequireUserLogin?: boolean;
-  children: ReactNode;
+interface GuardRouteProps extends RouteMetaType {
+  routerMatches: UIMatch<unknown, unknown>[];
 }
+
 const GuardRoute = (props: GuardRouteProps) => {
-  const { isRequireUserLogin = true, children } = props;
+  const { isRequireUserLogin = true, children, routerMatches } = props;
   const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState(false);
+
+  useEffect(() => {
+    // If no router matches, redirect to Not Found page
+    // This is a fallback to ensure that if the route does not match any defined routes,
+    if (!routerMatches) {
+      navigate(routePaths.notFund);
+    }
+  }, [navigate, routerMatches]);
 
   useEffect(() => {
     // Default to ask user login if not specified
     if (isRequireUserLogin) {
       const isUserLogged = storageTool.get(storageKeys.accessToken);
       if (!isUserLogged) {
-        navigate(routeKeys.login);
+        // navigate(routePaths.login);
       } else {
         setIsChecked(true);
       }
@@ -27,9 +36,6 @@ const GuardRoute = (props: GuardRouteProps) => {
       setIsChecked(true);
     }
   }, [isRequireUserLogin, navigate]);
-
-  // Render children only after authentication check is complete
-  // or when authentication is not required
   if (!isChecked) {
     return null;
   }

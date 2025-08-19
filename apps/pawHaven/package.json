@@ -56,7 +56,7 @@
     "uat": "vite --mode uat",
     "build:prod": "tsc && vite build --mode prod",
     "build:uat": "tsc && vite build --mode uat",
-    "preview": "vite preview"
+    "preview": "vite preview --port 1829 --mode dev"
   },
   "devDependencies": {
     "@types/ramda": "^0.27.44",

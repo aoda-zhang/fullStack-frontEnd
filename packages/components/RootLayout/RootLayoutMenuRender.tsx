@@ -66,15 +66,23 @@ const RootLayoutMenuRender = (props: MenuRenderType) => {
         itemClassNames = [...itemClassNames, styles.activeMenu];
       }
       return (
-        <button
-          type="button"
+        <div
           className={classNames(itemClassNames)}
+          key={item.label}
+          role="button"
+          tabIndex={0}
           onClick={() => {
             navigate(item.to || '/');
           }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              navigate(item.to || '/');
+            }
+          }}
         >
           {t(item.label)}
-        </button>
+        </div>
       );
     }
     return null;

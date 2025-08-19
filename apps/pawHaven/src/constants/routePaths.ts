@@ -1,4 +1,4 @@
-export const routeKeys = {
+export const routePaths = {
   home: '/',
   trip: '/trip',
   tripBasic: '/trip/basic',
@@ -6,10 +6,10 @@ export const routeKeys = {
   tripSummary: '/trip/summary',
   tripSuccess: '/trip/success/:tripID',
   history: '/history',
-  login: '/login',
-  register: '/register',
+  login: '/auth/login',
+  register: '/auth/register',
   notFund: '/notFound',
   auth: '/auth',
 };
 
-export default routeKeys;
+export default routePaths;

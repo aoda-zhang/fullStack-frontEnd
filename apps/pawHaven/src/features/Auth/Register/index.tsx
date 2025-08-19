@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import * as AuthAPI from '../apis';
 import style from '../index.module.css';
 
-import routeKeys from '@/constants/routeKeys';
+import routeKeys from '@/constants/routePaths';
 import { setUserInfo } from '@/store/globalReducer';
 
 const Register: FC = () => {
