@@ -77,7 +77,7 @@ const LatestRescue = () => {
   const { t } = useTranslation();
   return (
     <div className="px-10 lg:px-20">
-      <p className="flex items-center justify-between my-4">
+      <div className="flex items-center justify-between my-4">
         <span className="text-base lg:text-2xl font-bold">
           {t('pawHaven.recent_rescue')}
         </span>
@@ -88,7 +88,7 @@ const LatestRescue = () => {
             className="text-white bg-primary rounded-full"
           />
         </div>
-      </p>
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {rescues?.map((item) => (
           <RescueItem {...item} key={item?.name} />

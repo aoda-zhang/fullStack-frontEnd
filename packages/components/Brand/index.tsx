@@ -9,16 +9,24 @@ const Brand = ({ navigate }: { navigate: NavigateFunction }) => {
   const { t } = useTranslation();
 
   return (
-    <button
-      type="button"
+    <div
       className={styles.brand}
       onClick={() => {
         navigate('/');
       }}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          navigate('/');
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      aria-label={t('common.name')}
     >
       <img src={logoImg} alt={t('common.slogan')} className={styles.logo} />
       <span className={styles.name}>{t('common.name')}</span>
-    </button>
+    </div>
   );
 };
 export default Brand;

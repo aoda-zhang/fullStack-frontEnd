@@ -1,9 +1,8 @@
+import LangSwitcher from '@shared/components/LangSwitcher';
 import classNames from 'classnames';
 import { cloneElement } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavigateFunction } from 'react-router-dom';
-
-import LangSwitcher from '../LangSwitcher';
 
 import styles from './index.module.css';
 

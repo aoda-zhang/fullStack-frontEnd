@@ -1,7 +1,6 @@
+import myPersonal from '@shared/constants/myPerson';
 import { useTranslation } from 'react-i18next';
 // import { Link } from 'react-router-dom';
-
-import myPersonal from '../../constants/myPerson';
 
 import styles from './index.module.css';
 

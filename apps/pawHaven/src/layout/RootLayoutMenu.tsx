@@ -1,9 +1,8 @@
+import Brand from '@shared/components/Brand';
+import useIsMobile from '@shared/hooks/useIsMobile';
 import { AlignJustify } from 'lucide-react';
 import { useState } from 'react';
 import { NavigateFunction, UIMatch } from 'react-router-dom';
-
-import useIsMobile from '../../hooks/useIsMobile';
-import Brand from '../Brand';
 
 import styles from './index.module.css';
 import RootLayoutMenuRender, { MenuItemType } from './RootLayoutMenuRender';
@@ -45,15 +44,7 @@ const RootLayoutMenu = ({
 
   return (
     <header className={styles.header}>
-      <button
-        type="button"
-        className={styles.brandButton}
-        onClick={() => {
-          navigate('/');
-        }}
-      >
-        <Brand navigate={navigate} />
-      </button>
+      <Brand navigate={navigate} />
       {!isMobile && (
         <RootLayoutMenuRender
           menuItems={menuItems}

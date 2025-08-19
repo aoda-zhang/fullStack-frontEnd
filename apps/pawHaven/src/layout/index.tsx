@@ -1,10 +1,18 @@
-import { memo, ReactNode } from 'react';
-import { NavigateFunction, UIMatch } from 'react-router-dom';
+import { memo } from 'react';
+import {
+  NavigateFunction,
+  Outlet,
+  UIMatch,
+  useMatches,
+  useNavigate,
+} from 'react-router-dom';
 
 import styles from './index.module.css';
 import RootLayoutFooter from './RootLayoutFooter';
 import RootLayoutMenu from './RootLayoutMenu';
 import { MenuItemType } from './RootLayoutMenuRender';
+
+import { useGlobalState } from '@/store/globalReducer';
 
 export interface GlobalStateType {
   menuItems: any[];
@@ -15,15 +23,12 @@ export interface LayoutProps {
   menuItems: MenuItemType[];
   navigate: NavigateFunction;
   routerMatches: UIMatch<unknown, unknown>[];
-  children?: ReactNode;
 }
 
-const RootLayout = ({
-  menuItems = [],
-  navigate,
-  routerMatches,
-  children,
-}: LayoutProps) => {
+const RootLayout = () => {
+  const { menuItems } = useGlobalState();
+  const navigate = useNavigate();
+  const routerMatches = useMatches();
   return (
     <div className={styles.layout}>
       <RootLayoutMenu
@@ -32,7 +37,9 @@ const RootLayout = ({
         routerMatches={routerMatches}
       />
       <div className={styles.main}>
-        <div className={styles.content}>{children}</div>
+        <div className={styles.content}>
+          <Outlet />
+        </div>
         <RootLayoutFooter />
       </div>
     </div>

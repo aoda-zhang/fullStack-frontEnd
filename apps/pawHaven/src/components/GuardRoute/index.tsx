@@ -1,27 +1,17 @@
 import storageKeys from '@shared/constants/storageKeys';
 import storageTool from '@shared/utils/storage';
-import { useEffect, useState } from 'react';
-import { UIMatch, useNavigate } from 'react-router-dom';
+import { ReactElement, useEffect, useState } from 'react';
+import { useMatches, useNavigate } from 'react-router-dom';
 
 import { RouteMetaType } from '@/app/routes';
-import routePaths from '@/constants/routePaths';
 
-interface GuardRouteProps extends RouteMetaType {
-  routerMatches: UIMatch<unknown, unknown>[];
-}
-
-const GuardRoute = (props: GuardRouteProps) => {
-  const { isRequireUserLogin = true, children, routerMatches } = props;
+const GuardRoute = ({ children }: { children: ReactElement }) => {
+  const routerMatches = useMatches();
+  const currentRouteMeta: RouteMetaType =
+    routerMatches[routerMatches.length - 1]?.handle ?? {};
+  const { isRequireUserLogin = true } = currentRouteMeta;
   const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState(false);
-
-  useEffect(() => {
-    // If no router matches, redirect to Not Found page
-    // This is a fallback to ensure that if the route does not match any defined routes,
-    if (!routerMatches) {
-      navigate(routePaths.notFund);
-    }
-  }, [navigate, routerMatches]);
 
   useEffect(() => {
     // Default to ask user login if not specified
