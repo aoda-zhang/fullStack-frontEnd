@@ -4,7 +4,7 @@
 ![React](https://img.shields.io/badge/React-20232a?logo=react&logoColor=61dafb)
 ![pnpm](https://img.shields.io/badge/Package-pnpm-F69220?logo=pnpm&logoColor=white)
 ![License](https://img.shields.io/github/license/aoda-zhang/fullStack-frontEnd)
-[![brand.png](https://i.postimg.cc/pTjjMYt8/brand.png)](https://postimg.cc/Q9XCp7Cx)
+[![logo.png](https://i.postimg.cc/wBfGBBYS/logo.png)](https://postimg.cc/XZ58H4J8)
 
 ## 🌟 这是什么？
 
@@ -26,12 +26,11 @@ PawHaven 不仅仅是一个应用，更是一场用科技传递温度的行动�
 
 ## 🛠️ 技术栈
 
-- **前端：** React、TypeScript、Tailwind CSS、React Hook Form
+- **前端：** React、Redux、TypeScript、Tailwind CSS、React Hook Form
 - **后端：** NestJS、Node.js、REST & RPC API
 - **数据库：** PostgreSQL（或其他 SQL 数据库）
 - **认证：** 基于 JWT 的身份验证与角色管理
 - **部署：** Kubernetes、Docker、GitHub Actions CI/CD
-- **其他工具：** pnpm 包管理器、Zustand 状态管理、MUI 组件库
 
 参与贡献，你将获得与前沿技术栈的亲身实践，学习如何构建可扩展、易维护的应用。
 
