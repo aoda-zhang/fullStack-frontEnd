@@ -1,0 +1,55 @@
+{
+  "common": {
+    "name": "PawHaven",
+    "setting": "Einstellungen",
+    "brand": "TripSnap",
+    "record": "Streunende Tiere erfassen",
+    "stories": "Rettungsgeschichten",
+    "required": "ist erforderlich",
+    "save_continue": "Speichern & Weiter",
+    "previous": "Zurück",
+    "zh-CN": "中文(简体)",
+    "en-US": "Englisch",
+    "de-DE": "Deutsch",
+    "go_to_home": "ZUR STARTSEITE",
+    "not_found": "SEITE NICHT GEFUNDEN",
+    "not_found_info": "Die gesuchte Seite wurde möglicherweise entfernt, umbenannt oder ist vorübergehend nicht verfügbar.",
+    "sys_error": "<1>Oops! Etwas ist schiefgelaufen.</1><2>Bitte versuchen Sie, die Seite zu aktualisieren oder später erneut zurückzukehren.</2><3>Wenn das Problem weiterhin besteht, wenden Sie sich bitte an den Support.</3><4>Zurück zur <5>Startseite</5></4>",
+    "no_data": "Keine Daten verfügbar",
+    "quick_links": "Schnellzugriff",
+    "contact_me": "Kontakt",
+    "email": "E-Mail",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "slogan": "Keine Streuner mehr",
+    "subSlogan": "Finde, erfasse und rette jedes streunende Tier!",
+    "view_all": "Alle anzeigen",
+    "love_story": "Liebesgeschichte",
+    "owner_text": "© 2023 PawHaven von <a href='https://aoda.vercel.app' target='_blank' rel='noopener noreferrer' class='link'>Aoda Zhang</a>. Alle Rechte vorbehalten."
+  },
+  "pawHaven": {
+    "recent_rescue": "Neueste Rettungs-Updates",
+    "rescue_status_pending": "Ausstehend",
+    "rescue_status_inProgress": "In Bearbeitung",
+    "rescue_status_treated": "Behandelt",
+    "rescue_status_recovering": "Erholt sich",
+    "rescue_status_awaitingAdoption": "Wartet auf Adoption",
+    "rescue_status_adopted": "Adoptiert",
+    "rescue_status_failed": "Fehlgeschlagen"
+  },
+  "auth": {
+    "login": "ANMELDEN",
+    "auth": "Anmelden / Registrieren",
+    "sighup": "REGISTRIEREN",
+    "newUser": "registrieren",
+    "userName": "Benutzername oder E-Mail",
+    "password": "Passwort",
+    "userName_required": "Benutzername ist erforderlich",
+    "password_required": "Passwort ist erforderlich",
+    "logout": "Abmelden",
+    "current_lan": "Deutsch"
+  },
+  "home": {
+    "home_page": "Startseite"
+  }
+}

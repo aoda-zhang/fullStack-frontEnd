@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 import LocaleKeys from '../constants/localeKey';
 import getLocale from '../utils/getLocale';
 
+import deDE from './de-DE.json';
 import enUS from './en-US.json';
 import zhCN from './zh-CN.json';
 
@@ -11,6 +12,7 @@ const defaultLanguage = LocaleKeys['en-US'];
 const languageResources = {
   'zh-CN': { translation: zhCN },
   'en-US': { translation: enUS },
+  'de-DE': { translation: deDE },
 };
 const currentLanguage = getLocale(
   defaultLanguage,
