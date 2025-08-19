@@ -27,12 +27,13 @@ Additionally, PawHaven is a full-stack project designed for developers who want 
 
 ## 🛠️ Technology Stack
 
-- **Frontend:** React, TypeScript, Tailwind CSS, React Hook Form
+- **Frontend:** React, Redux, TypeScript, Tailwind CSS, React Hook Form
+
+
 - **Backend:** NestJS, Node.js, REST & RPC APIs
 - **Database:** PostgreSQL (or your preferred SQL database)
 - **Authentication:** JWT-based auth with role management
 - **Deployment:** Kubernetes, Docker, GitHub Actions CI/CD
-- **Other Tools:** pnpm package manager, Zustand state management, MUI component library
 
 By contributing, you get hands-on experience with this cutting-edge tech stack, building scalable and maintainable applications.
 
