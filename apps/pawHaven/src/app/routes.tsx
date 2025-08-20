@@ -34,7 +34,11 @@ const routeOptions: RouteObject[] = [
         </GuardRoute>
       </SuspenseWrapper>
     ),
-    errorElement: <ErrorFallback />,
+    errorElement: (
+      <SuspenseWrapper>
+        <ErrorFallback />
+      </SuspenseWrapper>
+    ),
     children: [
       {
         path: routePaths.home,
@@ -49,7 +53,11 @@ const routeOptions: RouteObject[] = [
         <AuthLayout />
       </SuspenseWrapper>
     ),
-    errorElement: <ErrorFallback />,
+    errorElement: (
+      <SuspenseWrapper>
+        <ErrorFallback />
+      </SuspenseWrapper>
+    ),
     children: [
       {
         path: routePaths.login,
