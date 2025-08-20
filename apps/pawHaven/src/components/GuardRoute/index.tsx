@@ -4,6 +4,7 @@ import { ReactElement, useEffect, useState } from 'react';
 import { useMatches, useNavigate } from 'react-router-dom';
 
 import { RouteMetaType } from '@/app/routes';
+import routePaths from '@/constants/routePaths';
 
 const GuardRoute = ({ children }: { children: ReactElement }) => {
   const routerMatches = useMatches();
@@ -18,7 +19,7 @@ const GuardRoute = ({ children }: { children: ReactElement }) => {
     if (isRequireUserLogin) {
       const isUserLogged = storageTool.get(storageKeys.accessToken);
       if (!isUserLogged) {
-        // navigate(routePaths.login);
+        navigate(routePaths.login);
       } else {
         setIsChecked(true);
       }

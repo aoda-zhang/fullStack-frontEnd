@@ -1,6 +1,4 @@
-import ErrorFallback from '@shared/components/ErrorFallback';
 import Loading from '@shared/components/Loading';
-import NotFund from '@shared/components/NotFund';
 import { lazy, ReactNode, Suspense } from 'react';
 import {
   createBrowserRouter,
@@ -8,7 +6,9 @@ import {
   RouteObject,
 } from 'react-router-dom';
 
+import ErrorFallback from '@/components/ErrorFallback';
 import GuardRoute from '@/components/GuardRoute';
+import NotFund from '@/components/NotFund';
 import routePaths from '@/constants/routePaths';
 import AuthLayout from '@/features/Auth/authLayout';
 import Home from '@/features/Home';
@@ -22,8 +22,6 @@ export interface RouteMetaType {
 const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
   return <Suspense fallback={<Loading />}>{children}</Suspense>;
 };
-
-const History = lazy(() => import('@/features/History'));
 const Login = lazy(() => import('@/features/Auth/Login'));
 const Register = lazy(() => import('@/features/Auth/Register'));
 
@@ -42,14 +40,6 @@ const routeOptions: RouteObject[] = [
         path: routePaths.home,
         handle: { isRequireUserLogin: false },
         element: <Home />,
-      },
-      {
-        path: routePaths.history,
-        element: <History />,
-      },
-      {
-        path: '*',
-        element: <NotFund />,
       },
     ],
   },
@@ -71,14 +61,10 @@ const routeOptions: RouteObject[] = [
         handle: { isRequireUserLogin: false },
         element: <Register />,
       },
-      {
-        path: '*',
-        element: <NotFund />,
-      },
     ],
   },
   {
-    path: '*',
+    path: routePaths.notFund,
     element: <NotFund />,
   },
 ];
