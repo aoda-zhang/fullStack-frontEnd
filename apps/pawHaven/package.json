@@ -48,7 +48,7 @@
     "zod": "^3.24.4"
   },
   "scripts": {
-    "dev": "vite --mode dev --port 3009",
+    "dev": "vite --mode dev",
     "uat": "vite --mode uat",
     "build:prod": "tsc && vite build --mode prod",
     "build:uat": "tsc && vite build --mode uat",
