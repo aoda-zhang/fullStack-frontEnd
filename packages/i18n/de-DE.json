@@ -49,7 +49,11 @@
     "userName_required": "Benutzername ist erforderlich",
     "password_required": "Passwort ist erforderlich",
     "logout": "Abmelden",
-    "current_lan": "Deutsch"
+    "current_lan": "Deutsch",
+    "no_account": "Noch kein Konto?",
+    "register_now": "Jetzt registrieren",
+    "with_account": "Schon ein Konto?",
+    "login_now": "Jetzt anmelden"
   },
   "home": {
     "home_page": "Startseite"

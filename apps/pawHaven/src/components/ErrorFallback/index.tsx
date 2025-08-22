@@ -10,6 +10,7 @@ interface ErrorInfo {
 
 const ErrorFallback = () => {
   const errorInfo = useRouteError() as Partial<ErrorInfo>;
+  console.log('errorInfo-------------', errorInfo);
 
   switch (errorInfo?.status) {
     case 404:

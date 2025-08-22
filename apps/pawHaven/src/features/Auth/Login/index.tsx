@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import * as AuthAPI from '../apis';
 import style from '../index.module.css';
 
-import routeKeys from '@/constants/routePaths';
+import routePaths from '@/route/routePaths';
 import { setUserInfo } from '@/store/globalReducer';
 
 const Login: FC = () => {
@@ -65,15 +65,15 @@ const Login: FC = () => {
         </form>
       </FormProvider>
       <p className="text-right mt-5">
-        <span className="text-gray-400">还没有账号？</span>
+        <span className="text-gray-400 mr-3">{t('auth.no_account')}</span>
         <button
           type="button"
           className="cursor-pointer text-primary"
           onClick={() => {
-            navigate(routeKeys.register);
+            navigate(routePaths.register);
           }}
         >
-          立即注册
+          {t('auth.register_now')}
         </button>
       </p>
     </div>

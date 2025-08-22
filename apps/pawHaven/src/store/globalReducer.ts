@@ -12,14 +12,16 @@ import type { UserInfoType } from '@/typings/auth.types';
 
 export interface GlobalStateType {
   userInfo: UserInfoType;
-  menuItems: any[];
+  globalMenuItems: any[];
+  globalRouters: any[];
   locale: string;
 }
 const initialState: GlobalStateType = {
   userInfo: {
     userName: '',
   },
-  menuItems: [],
+  globalMenuItems: [],
+  globalRouters: [],
   locale: storageTool.get(storageKeys.I18NKEY) || LocaleKeys['en-US'],
 };
 
@@ -27,8 +29,11 @@ const globalReducer = createSlice({
   name: reducerNames.global,
   initialState,
   reducers: {
-    setMenuItems: (state, action) => {
-      state.menuItems = action.payload;
+    setGlobalMenuItems: (state, action) => {
+      state.globalMenuItems = action.payload;
+    },
+    setGlobalRouters: (state, action) => {
+      state.globalRouters = action.payload;
     },
     setUserInfo: (state, action) => {
       state.userInfo = action.payload;
@@ -37,7 +42,8 @@ const globalReducer = createSlice({
 });
 export default globalReducer.reducer;
 
-export const { setMenuItems, setUserInfo } = globalReducer.actions;
+export const { setGlobalMenuItems, setUserInfo, setGlobalRouters } =
+  globalReducer.actions;
 export const useGlobalState = () => {
   return useReduxSelector((state: ReduxState) => state?.global ?? {});
 };

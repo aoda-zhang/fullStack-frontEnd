@@ -16,6 +16,8 @@ import envConfig, { EnvVariables } from '../config';
 import '@shared/i18n';
 import { store, persistor } from '../store/reduxStore';
 
+import GlobalInitializer from './GlobalInitializer';
+
 type AppProviderProps = {
   children: ReactNode;
 };
@@ -35,6 +37,7 @@ const AppProvider = ({ children }: AppProviderProps) => {
               )}
               <ThemeProvider theme={MUITheme}>
                 <Toaster />
+                <GlobalInitializer />
                 {children}
               </ThemeProvider>
             </QueryClientProvider>

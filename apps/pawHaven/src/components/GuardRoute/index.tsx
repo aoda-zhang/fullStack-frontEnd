@@ -3,8 +3,8 @@ import storageTool from '@shared/utils/storage';
 import { ReactElement, useEffect, useState } from 'react';
 import { useMatches, useNavigate } from 'react-router-dom';
 
-import { RouteMetaType } from '@/app/routes';
-import routePaths from '@/constants/routePaths';
+import { RouteMetaType } from '@/route/AppRouterProvider';
+import routePaths from '@/route/routePaths';
 
 const GuardRoute = ({ children }: { children: ReactElement }) => {
   const routerMatches = useMatches();

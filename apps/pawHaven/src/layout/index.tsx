@@ -12,12 +12,7 @@ import RootLayoutFooter from './RootLayoutFooter';
 import RootLayoutMenu from './RootLayoutMenu';
 import { MenuItemType } from './RootLayoutMenuRender';
 
-import { useGlobalState } from '@/store/globalReducer';
-
-export interface GlobalStateType {
-  menuItems: any[];
-  locale: string;
-}
+import { GlobalStateType, useGlobalState } from '@/store/globalReducer';
 
 export interface LayoutProps {
   menuItems: MenuItemType[];
@@ -26,13 +21,13 @@ export interface LayoutProps {
 }
 
 const RootLayout = () => {
-  const { menuItems } = useGlobalState();
+  const { globalMenuItems } = useGlobalState() as GlobalStateType;
   const navigate = useNavigate();
   const routerMatches = useMatches();
   return (
     <div className={styles.layout}>
       <RootLayoutMenu
-        menuItems={menuItems}
+        menuItems={globalMenuItems}
         navigate={navigate}
         routerMatches={routerMatches}
       />

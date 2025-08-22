@@ -49,7 +49,11 @@
     "userName_required": "请输入你的账户名",
     "password_required": "请输入你的密码",
     "logout": "退出登录!",
-    "current_lan": "简体中文"
+    "current_lan": "简体中文",
+    "no_account": "还没有账号？",
+    "register_now": "立即注册",
+    "with_account": "已有账号",
+    "login_now": "立即登录"
   },
   "home": {
     "home_page": "主页"

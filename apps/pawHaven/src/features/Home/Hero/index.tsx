@@ -1,20 +1,9 @@
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useDefaultMenu } from '../apis/queries';
 import styles from '../index.module.css';
-
-import { useReduxDispatch } from '@/hooks/reduxHooks';
-import { setMenuItems } from '@/store/globalReducer';
 
 const Hero = () => {
   const { t } = useTranslation();
-  const dispatch = useReduxDispatch();
-  const { data: menuItems } = useDefaultMenu();
-
-  useEffect(() => {
-    dispatch(setMenuItems(menuItems ?? []));
-  }, [menuItems, dispatch]);
 
   return (
     <div className={styles.slog}>

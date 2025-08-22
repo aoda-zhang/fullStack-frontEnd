@@ -38,3 +38,42 @@ export const getDefaultDynamicMenu = () => {
     },
   ];
 };
+
+export const getDynamicRouters = () => {
+  // return httpService.get('document/v1/default-dynamic-menu');
+  // Image this data from API server side
+  const routes = [
+    {
+      element: 'rootLayout',
+      errorElement: 'errorFallback',
+      children: [
+        {
+          path: '/',
+          handle: { isRequireUserLogin: false },
+          element: 'home',
+        },
+      ],
+    },
+    {
+      element: 'authLayout',
+      errorElement: 'errorFallback',
+      children: [
+        {
+          path: '/auth/login',
+          handle: { isRequireUserLogin: false },
+          element: 'auth_login',
+        },
+        {
+          path: 'auth/register',
+          handle: { isRequireUserLogin: false },
+          element: 'auth_register',
+        },
+      ],
+    },
+    {
+      path: '/notFund',
+      element: 'notFund',
+    },
+  ];
+  return Promise.resolve(routes);
+};

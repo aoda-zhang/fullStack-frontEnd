@@ -49,7 +49,11 @@
     "userName_required": "Username is required",
     "password_required": "Password is required",
     "logout": "Log out",
-    "current_lan": "English(USA)"
+    "current_lan": "English(USA)",
+    "no_account": "Don’t have an account?",
+    "register_now": "Sign up now",
+    "with_account": "Already have an account?",
+    "login_now": "Log in now"
   },
   "home": {
     "home_page": "Home Page"
