@@ -3,13 +3,13 @@ import { useTranslation } from 'react-i18next';
 
 // Tailwind will tree-shake dynamic variables, so we need to define all possible values
 const rescueStatusColorMapping = {
-  pending: 'pending',
-  inProgress: 'in-progress',
-  treated: 'treated',
-  recovering: 'recovering',
-  awaitingAdoption: 'awaitingAdoption',
-  adopted: 'adopted',
-  failed: 'failed',
+  pending: 'bg-rescue-pending',
+  inProgress: 'bg-rescue-inProgress',
+  treated: 'bg-rescue-treated',
+  recovering: 'bg-rescue-recovering',
+  awaitingAdoption: 'bg-rescue-awaitingAdoption',
+  adopted: 'bg-rescue-adopted',
+  failed: 'bg-rescue-failed',
 };
 
 interface RescueItemType {
@@ -65,7 +65,8 @@ const RescueItem = (item: RescueItemType) => {
       <p className="text-text-secondary">{item?.description}</p>
       <button
         type="button"
-        className={`rounded-full text-center py-2 text-white bg-rescue-${rescueStatusColorMapping[item?.status]} cursor-pointer`}
+        className={`rounded-full text-center text-white py-2 ${rescueStatusColorMapping[item?.status]} cursor-pointer
+          `}
       >
         {t(`pawHaven.rescue_status_${item?.status}`)}
       </button>
